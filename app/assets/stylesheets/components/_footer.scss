@@ -1,5 +1,5 @@
 .navbar-bottom {
-  background-color: #212042;
+  background-color: #221650;
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -7,24 +7,40 @@
 }
 
 /* Style the links inside the navigation bar */
-.navbar-bottom a {
+/*.navbar-bottom a {
   float: left;
   display: block;
-  color: #57557A;
+  color: #8862D0;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+}*/
+
+.navbar-bottom a {
+  display: flex;
+  color: #8862D0;
+  text-align: center;
+  padding: 15px 15px;
+  text-decoration: none;
+  font-size: 17px;
+  justify-content: space-evenly;
+  flex-flow: column wrap;
 }
+
 
 /* Change the color of links on hover */
 .navbar-bottom a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: #AC91DE;
+  color: #6336B5;
 }
 
 /* Add a color to the active/current link */
 .navbar a.active {
   background-color: #57557A;
   color: rgb(176, 106, 252);
+}
+
+.navbar-bottom.navbar-bottom-home {
+  display: none;
 }

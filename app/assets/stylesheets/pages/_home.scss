@@ -1,1 +1,41 @@
 // Specific CSS for your home-page
+
+//chager px en vh
+body {
+  width: 414px;
+  height: 896px;
+}
+
+.home {
+  height: calc(70vh - 63px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  //       haut  droite bas   gauche
+  padding: 150px   0px  150px   0px;
+  color: #7136B5;
+  font-size: 100px;
+}
+
+.text {
+  color: #7136B5;
+  padding: 0px 0px  150px 0px;
+  font-size: 20px;
+}
+
+
+.navbar-lewagon {
+  display: none;
+  visibility: hidden;
+}
+
+/*.btn-blue {
+  font-size: 20px;
+  padding: 20px 20px;
+  background-color: aqua;
+  text-decoration: none;
+}*/
