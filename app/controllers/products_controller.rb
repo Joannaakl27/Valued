@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
       json = JSON.parse(response.read)
       @products = json['products']
     else
-     @products = Product.all
+      @products = Product.all
     end
   end
 

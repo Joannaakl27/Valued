@@ -9,10 +9,14 @@
 
 
 <div class="navbar-bottom d-flex justify-content-center">
-  <a href="#home" class="mr-1 ml-1" > <i class="fa fa-ellipsis-h"></i> More</a>
-  <a href="products" class="mr-1 ml-1" > <i class="fa fa-search"></i> Search</a>
-  <a href="#" class="mr-1 ml-1" > <i class="fa fa-dashboard"></i> Dashboard</a>
-  <a href="#" class="mr-1 ml-1" > <i class="fa fa-history"></i> History</a>
+  <a href="#" class="mr-1 ml-1" > <i class="fa fa-ellipsis-h"></i>More</a>
+  <%# <a href="products" class="mr-1 ml-1" > <i class="fa fa-search"></i> Search</a> %>
+  <%= link_to products_path, class:"mr-1 ml-1" do %>
+    <i class="fa fa-search"></i>Search
+  <% end %>
+  <a href="#" class="mr-1 ml-1" > <i class="fa fa-dashboard"></i>Dashboard</a>
+  <a href="#" class="mr-1 ml-1" > <i class="fa fa-history"></i>History</a>
+
 </div>
 
 

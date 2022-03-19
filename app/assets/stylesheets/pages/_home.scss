@@ -1,7 +1,42 @@
 // Specific CSS for your home-page
 
+.wallpaper {
+  height: calc(100vh - 67.5px);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #7DAFED;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.navbar-bottom {
+  display: none;
+  visibility: hidden;
+}
+
+.btn-home {
+  background-color: white;
+
+  color: #1E2226;
+  border-radius: 50px;
+  font-size: 30px;
+  margin: 95px;
+  padding: 20px 70px;
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.btn-home:hover, .btn-home:focus, .btn-home:active, .btn-home.active, .open>.dropdown-toggle.btn-home {
+  color: #6EB1F3;
+  background-color: #435A71;
+  border: 2px solid #6EB1F3;
+}
+
 //chager px en vh
-body {
+/*body {
   background-color: #000000;
   width: 414px;
   height: 896px;

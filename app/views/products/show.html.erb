@@ -23,9 +23,8 @@
             </span>
           </h6>
         </div>
-        <div class="progress">
-          <div class="progress-bar bg-black" role="progressbar" style="width: 40%;" aria-valuenow="<%= ((@product["ecoscore_data"]["agribalyse"]["co2_total"] / 4.50785714366) * 100).round()%>"
-            aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress" style="height: 5px;">
+          <div class="progress-bar bg-black" role="progressbar" style="width: <%= ((@product["ecoscore_data"]["agribalyse"]["co2_total"] / 4.50785714366) * 100).round()%>%;" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <h6 class="card-title font-weight- mt-4"> Life Cycle Analysis</h6>
         <div class="mt-2">
