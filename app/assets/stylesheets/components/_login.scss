@@ -1,12 +1,20 @@
 body {
-    background-color: #140D30
+    background-color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.card {
+.card-forms {
     border: none;
-    border-top: 5px solid rgb(176, 106, 252);
-    background: #212042;
-    color: #57557A
+    border-radius: 10px;
+    border-top: 5px solid #6EB1F3;
+    background: #1D2226;
+    color: #E9E9EA
+}
+.card {
+  border: 1.5px solid #434A50;
+  background: #1D2226;
+  color: #E9E9EA;
+  border-radius: 5px
 }
 
 p {
@@ -19,7 +27,7 @@ p {
     justify-content: center;
     align-items: center;
     border: none;
-    background: #2A284D;
+    background: #1D2226;
     height: 40px;
     width: 90px
 }
@@ -28,17 +36,6 @@ p {
     cursor: pointer
 }
 
-.fa-twitter {
-    color: #56ABEC
-}
-
-.fa-facebook {
-    color: #1775F1
-}
-
-.fa-google {
-    color: #CB5048
-}
 
 .division {
     float: none;
@@ -50,8 +47,7 @@ p {
 }
 
 .division .line {
-    border-top: 1.5px solid #57557A;
-    ;
+    border-top: 1.5px solid #BCBDBE;
     position: absolute;
     top: 13px;
     width: 85%
@@ -75,19 +71,19 @@ p {
 }
 
 .form-control {
-    border: 1px solid #57557A;
+    border: 1px solid #BCBDBE;
     border-radius: 3px;
-    background: #212042;
+    background: transparent;
     margin-bottom: 20px;
     letter-spacing: 1px
 }
 
 .form-control:focus {
-    border: 1px solid #57557A;
+    border: 1px solid #BCBDBE;
     border-radius: 3px;
     box-shadow: none;
-    background: #212042;
-    color: #fff;
+    background: #38434F;
+    color: #E9E9EA;
     letter-spacing: 1px
 }
 
@@ -104,15 +100,17 @@ p {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, rgba(176, 106, 252, 1) 39%, rgba(116, 17, 255, 1) 101%);
-    border: none;
+    background-color: transparent;
+    border: 2px solid #6EB1F3;
+    color: #6EB1F3;
     border-radius: 50px;
     font-size: 14px
 }
 
-.btn-primary:focus {
-    box-shadow: none;
-    border: none
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #6EB1F3;
+    background-color: #435A71;
+    border: 2px solid #6EB1F3;
 }
 
 small {

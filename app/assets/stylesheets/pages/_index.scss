@@ -1,2 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.card.panels-card .hour {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
