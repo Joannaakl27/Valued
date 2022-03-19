@@ -3,14 +3,12 @@
     <div class="col-12 pr-3 pl-3">
       <h3 class= "text-white mb-3">Search for a Product</h3>
       <%= form_tag products_path, method: :get, class: "d-flex justify-content-between" do %>
-        <div>
           <%= text_field_tag :query,
               params[:query],
               class: "form-control",
               placeholder: "Search for a product"%>
-        </div>
         <div >
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <%= submit_tag "Search", class: "btn btn-primary ml-2" %>
         </div>
       <% end %>
     </div>

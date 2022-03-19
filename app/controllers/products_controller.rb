@@ -10,7 +10,9 @@ class ProductsController < ApplicationController
       json = JSON.parse(response.read)
       @products = json['products']
     else
-      @products = Product.all
+      response = URI.open("https://ch-en.openfoodfacts.org/store/coop.json")
+      json = JSON.parse(response.read)
+      @products = json['products']
     end
   end
 
