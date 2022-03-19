@@ -8,7 +8,7 @@
 -->
 
 
-<div class="navbar-bottom d-flex justify-content-center">
+<div class="navbar-bottom d-flex justify-content-center <%= yield(:footer_class)%>">
   <a href="#" class="mr-1 ml-1" > <i class="fa fa-ellipsis-h"></i>More</a>
   <%# <a href="products" class="mr-1 ml-1" > <i class="fa fa-search"></i> Search</a> %>
   <%= link_to products_path, class:"mr-1 ml-1" do %>
