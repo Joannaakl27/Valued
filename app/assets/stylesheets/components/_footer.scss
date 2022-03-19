@@ -1,9 +1,10 @@
 .navbar-bottom {
-  background-color: #221650;
+  background-color: #1D2226;
   overflow: hidden;
   position: fixed;
   bottom: 0;
   width: 100%;
+  border-top: 1.5px solid #434A50;
 }
 
 /* Style the links inside the navigation bar */
@@ -19,7 +20,7 @@
 
 .navbar-bottom a {
   display: flex;
-  color: #8862D0;
+  color: #BCBDBE;
   text-align: center;
   padding: 15px 15px;
   text-decoration: none;
@@ -31,14 +32,15 @@
 
 /* Change the color of links on hover */
 .navbar-bottom a:hover {
-  background-color: #AC91DE;
-  color: #6336B5;
+  background-color: #1D2226;
+  color: #E9E9Ea;
 }
 
 /* Add a color to the active/current link */
 .navbar a.active {
-  background-color: #57557A;
-  color: rgb(176, 106, 252);
+  background-color: #1D2226;
+  color: #E9E9Ea;
+  border-bottom: 2px solid #E9E9Ea;
 }
 
 .navbar-bottom.navbar-bottom-home {

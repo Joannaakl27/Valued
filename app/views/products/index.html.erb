@@ -1,39 +1,43 @@
-<div class="container mt-50 mb-50">
-  <div>
-    <h1 class= "text-white">Search for a Product</h1>
-    <%= form_tag products_path, method: :get, class: "d-flex" do %>
-      <div class="card">
-        <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search for a product"%>
-      </div>
-      <div class ="card">
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      </div>
-    <% end %>
-  </div>
-  <div class="row">
-    <div class="col-md-10">
+<div class="container">
+  <section class="mx-auto my-5" style="max-width: 23rem;">
+    <div class="col-12 pr-3 pl-3">
+      <h3 class= "text-white mb-3">Search for a Product</h3>
+      <%= form_tag products_path, method: :get, class: "d-flex justify-content-between" do %>
+        <div>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Search for a product"%>
+        </div>
+        <div >
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="card-body rounded-bottom text-dark">
       <% @products.each do |product| %>
-        <div class="card card-body">
-          <div class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
-            <div class="mr-2 mb-3 mb-lg-0"> <img src= <%= product["image_front_url"] %> width="200" height="200" alt=""> </div>
-              <div class="media-body">
-                <h6 class="media-title font-weight-semibold"> <a href="#" data-abc="true"><%= product["product_name"] %></a> </h6>
-                <ul class="list-inline list-inline-dotted mb-3 mb-lg-2">
-                  <li class="list-inline-item"><a href="#" class="text-muted" data-abc="true"><%= product["ciqual_food_name_tags"] %></a></li>
-                  <li class="list-inline-item"><a href="#" class="text-muted" data-abc="true"><%= product["stores"] %></a></li>
-                </ul>
+        <div class="row">
+          <div class="col-12 p-1">
+            <div class="card">
+              <div class="card-body pb-0 d-flex">
+                <img src= <%= product["image_front_url"] %> width="100" height="100" alt="">
+                <div class="ml-4">
+                  <p class="mb-0 hour"> Type: <%= product["ecoscore_data"]["agribalyse"]["name_en"] %> </p>
+                  <p class="mb-0 hour"> Grade: <%= product["ecoscore_grade"].upcase  %></p>
+                  <p class="mb-0 hour"> Score: <%= product["ecoscore_score"] %> / 100</p>
+                </div>
               </div>
-              <div class="mt-3 mt-lg-0 ml-lg-3 text-center">
-                <button type="button" class="btn btn-warning mt-4 text-white"><i class="icon-cart-add mr-2"></i>More Info</button>
-                <%= link_to "More Info", "products/#{product["_id"]}" %>
+              <hr>
+              <div class="card-body pt-0 d-flex justify-content-between">
+                <h6 class="font-weight-bold mb-1"><%= product["product_name"] %></h6>
+                <%= link_to "More Info", "products/#{product["_id"]}", class: "mb-0" %>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+
+  </section>
 </div>

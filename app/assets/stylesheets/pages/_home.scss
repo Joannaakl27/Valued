@@ -2,6 +2,7 @@
 
 //chager px en vh
 body {
+  background-color: #000000;
   width: 414px;
   height: 896px;
 }
@@ -17,23 +18,23 @@ body {
 .title {
   //       haut  droite bas   gauche
   padding: 150px   0px  150px   0px;
-  color: #7136B5;
+  color: #E9E9EA;
   font-size: 100px;
 }
 
 .text {
-  color: #7136B5;
+  color: #E9E9EA;
   padding: 0px 0px  150px 0px;
   font-size: 20px;
 }
 
-
+/*
 .navbar-lewagon {
   display: none;
   visibility: hidden;
 }
 
-/*.btn-blue {
+.btn-blue {
   font-size: 20px;
   padding: 20px 20px;
   background-color: aqua;
