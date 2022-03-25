@@ -1,12 +1,12 @@
 body {
-    background-color: #000000;
+    background-color: #F5F5F9;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .card-forms {
     border: none;
     border-radius: 10px;
-    border-top: 5px solid #6EB1F3;
+    border-top: 5px solid #8387F5;
     background: #1D2226;
     color: #E9E9EA
 }
@@ -73,7 +73,7 @@ p {
 .form-control {
     border: 1px solid #BCBDBE;
     border-radius: 3px;
-    background: transparent;
+    background: #EEF3F8;
     margin-bottom: 20px;
     letter-spacing: 1px
 }
@@ -101,16 +101,15 @@ p {
 
 .btn-primary {
     background-color: transparent;
-    border: 2px solid #6EB1F3;
-    color: #6EB1F3;
-    border-radius: 50px;
+    border: 2px solid #8387F5;
+    color: #8387F5;
     font-size: 14px
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-    color: #6EB1F3;
+    color: #8387F5;
     background-color: #435A71;
-    border: 2px solid #6EB1F3;
+    border: 2px solid #8387F5;
 }
 
 small {

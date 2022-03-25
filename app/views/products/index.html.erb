@@ -17,19 +17,45 @@
       <% @products.each do |product| %>
         <div class="row">
           <div class="col-12 p-1">
-            <div class="card">
-              <div class="card-body pb-0 d-flex">
-                <img src= <%= product["image_front_url"] %> width="100" height="100" alt="">
-                <div class="ml-4">
-                  <p class="mb-0 hour"> Type: <%= product["ecoscore_data"]["agribalyse"]["name_en"] %> </p>
-                  <p class="mb-0 hour"> Grade: <%= product["ecoscore_grade"].upcase  %></p>
-                  <p class="mb-0 hour"> Score: <%= product["ecoscore_score"] %> / 100</p>
+            <div class="card-index w-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center px-md-1">
+                  <div>
+                    <p><%= product["product_name"] %></p>
+                    <%= link_to "", "products/#{product["_id"]}" , class:"stretched-link" %>
+                  </div>
+                  <div class="align-self-center">
+                    <img src= <%= product["image_front_url"] %> width="60" height="60" class="product-img">
+                  </div>
                 </div>
-              </div>
-              <hr>
-              <div class="card-body pt-0 d-flex justify-content-between">
-                <h6 class="font-weight-bold mb-1"><%= product["product_name"] %></h6>
-                <%= link_to "More Info", "products/#{product["_id"]}", class: "mb-0" %>
+                <div class="px-md-1">
+                  <% if product["ecoscore_grade"].upcase == "A" %>
+                    <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
+                      <div class="progress-bar color-A" role="progressbar" style="width: <%= product["ecoscore_score"] %>%;" aria-valuenow="<%= product["ecoscore_score"] %>"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  <% elsif product["ecoscore_grade"].upcase == "B" %>
+                    <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
+                      <div class="progress-bar color-B" role="progressbar" style="width: <%= product["ecoscore_score"] %>%;" aria-valuenow="<%= product["ecoscore_score"] %>"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  <% elsif product["ecoscore_grade"].upcase == "C" %>
+                    <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
+                      <div class="progress-bar color-C" role="progressbar" style="width: <%= product["ecoscore_score"] %>%;" aria-valuenow="<%= product["ecoscore_score"] %>"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  <% elsif product["ecoscore_grade"].upcase == "D" %>
+                    <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
+                      <div class="progress-bar color-D" role="progressbar" style="width: <%= product["ecoscore_score"] %>%;" aria-valuenow="<%= product["ecoscore_score"] %>"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  <% elsif product["ecoscore_grade"].upcase == "E" %>
+                    <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
+                      <div class="progress-bar color-E" role="progressbar" style="width: <%= product["ecoscore_score"] %>%;" aria-valuenow="<%= product["ecoscore_score"] %>"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  <%end%>
+                </div>
               </div>
             </div>
           </div>

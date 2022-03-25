@@ -1,14 +1,17 @@
+require 'open-uri'
+require 'json'
+
 class ConsumablesController < ApplicationController
   def new
     @consumable = Consumable.new
-    response = URI.open("https://ch-en.openfoodfacts.org/api/v0/product/#{params[:id]}.json")
+    response = URI.open("https://ch-en.openfoodfacts.org/api/v0/product/#{params[:product_id]}.json")
     json = JSON.parse(response.read)
     @product = json['product']
   end
 
   def create
-    @consumable = Consumable..new(consumable_params)
-    response = URI.open("https://ch-en.openfoodfacts.org/api/v0/product/#{params[:id]}.json")
+    @consumable = Consumable.new(consumable_params)
+    response = URI.open("https://ch-en.openfoodfacts.org/api/v0/product/#{params[:product_id]}.json")
     json = JSON.parse(response.read)
     @product = json['product']
     @consumable.user = current_user
