@@ -8,11 +8,9 @@
 require "open-uri"
 
 User.destroy_all
-Game.destroy_all
 
 User.create!(
   email: "aaribaud@hotmail.com",
   password: "123456",
-  username: "Anthony",
-  address: "Rue des Vollandes 38, 1207 Genève"
+  username: "Anthony"
 )

@@ -13,8 +13,7 @@
                     </div>
                   </div>
               </div>
-              <form class="myform">
-                <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, class:"myform") do |f| %>
                   <%= f.error_notification %>
 
                   <div class="form-inputs form-group">
@@ -31,7 +30,6 @@
                     <%= render "devise/shared/links" %>
                   </div>
                 <% end %>
-              </form>
             </div>
         </div>
     </div>

@@ -3,12 +3,13 @@
 
     <div class="card">
       <div class="card-body">
-        <%# <div class="d-flex justify-content-between "> %>
+        <div class="d-flex justify-content-between ">
           <h3 class="card-title font-weight-bold"><%= @product["product_name"] %></h3>
           <%# <button type="button" class="btn" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
             <i class="fa fa-plus-circle fa-lg text-muted"></i>
           </button> %>
-        <%# </div> %>
+          <%= link_to "Add", new_consumable_path(product_id: @product["_id"]), class:"text-white" %>
+        </div>
         <p class="card-text"><%= @product["brands_tags"].first %></p>
         <div class="d-flex justify-content-between">
           <h4 class = "display-3 degree"><%= @product["ecoscore_data"]["agribalyse"]["co2_total"].round(2)%></h4>

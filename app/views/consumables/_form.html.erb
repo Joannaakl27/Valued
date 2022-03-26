@@ -1,0 +1,27 @@
+<div class="container py-5">
+  <h2 class="text-center mb-5">Add Food</h2>
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3 h-75">
+        <div class="container d-flex justify-content-center h-100">
+          <div class="container h-100 w-100">
+            <%= simple_form_for @consumable do |f| %>
+              <%= f.input :purchase_date, as: :date, html5: true, max: Date.today %>
+              <%= f.input :number_of_servings, as: :integer, html5: true %>
+              <%= f.input :serving_size, as: :float, html5: true %>
+              <div class="text-center">
+                <%= f.submit 'Submit', class: 'btn btn-flat mt-2 text-center' %>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="shadow d-flex flex-column h-100 ml-3">
+            <%= image_tag @product["image_front_url"], crop: :fill, class: 'w-100 h-100' %>
+            <div class="container d-flex justify-content-between mt-2">
+              <p><%= @product["product_name"] %></p>
+              <p><%= @product["brands"] %></p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
