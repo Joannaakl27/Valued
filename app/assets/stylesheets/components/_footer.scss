@@ -1,10 +1,10 @@
 .navbar-bottom {
-  background-color: #f5f7fa;
+  background-color: #f3f3f8;
   overflow: hidden;
   position: fixed;
   bottom: 0;
   width: 100%;
-  border-top: 1.5px solid #344050;
+  box-shadow: 0px 0px 10px 5px rgba(150, 150, 150, 0.5);
 }
 
 /* Style the links inside the navigation bar */
@@ -20,7 +20,7 @@
 
 .navbar-bottom a {
   display: flex;
-  color: #BCBDBE;
+  color: #a8a8a8;
   text-align: center;
   padding: 15px 15px;
   text-decoration: none;
