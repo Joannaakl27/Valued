@@ -8,6 +8,7 @@
               <%= f.input :purchase_date, as: :date, html5: true, max: Date.today %>
               <%= f.input :number_of_servings, as: :integer, html5: true %>
               <%= f.input :serving_size, as: :float, html5: true %>
+              <%= f.input :product_barcode %>
               <div class="text-center">
                 <%= f.submit 'Submit', class: 'btn btn-flat mt-2 text-center' %>
               </div>
