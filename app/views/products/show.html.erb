@@ -33,19 +33,13 @@
         </div>
         <h6 class="card-title font-weight- mt-4"> Life Cycle Analysis</h6>
         <div class="mt-2">
-          <%= bar_chart [
-                          {
-                            name: "kg CO2eq Emissions",
-                            data: {
-                              "Agriculture" => @product["ecoscore_data"]["agribalyse"]["co2_agriculture"],
-                              "Processing" => @product["ecoscore_data"]["agribalyse"]["co2_processing"],
-                              "Packaging" => @product["ecoscore_data"]["agribalyse"]["co2_packaging"],
-                              "Transportation" => @product["ecoscore_data"]["agribalyse"]["co2_transportation"],
-                              "Distribution" => @product["ecoscore_data"]["agribalyse"]["co2_distribution"],
-                              "Consumption" => @product["ecoscore_data"]["agribalyse"]["co2_consumption"]
-                            }
-                          }
-                        ] %>
+        <%= pie_chart @data = {"Agriculture" => @product["ecoscore_data"]["agribalyse"]["co2_agriculture"],
+                "Processing" => @product["ecoscore_data"]["agribalyse"]["co2_processing"],
+                "Packaging" => @product["ecoscore_data"]["agribalyse"]["co2_packaging"],
+                "Transportation" => @product["ecoscore_data"]["agribalyse"]["co2_transportation"],
+                "Distribution" => @product["ecoscore_data"]["agribalyse"]["co2_distribution"],
+                "Consumption" => @product["ecoscore_data"]["agribalyse"]["co2_consumption"]
+              }, donut: true, colors: ['#71DD37', '#03C3EC',  '#8387F5', '#8592A3', '#FFAC02', '#FF3E1D'], cutoutPercentage: 80, legend: false %>
         </div>
       </div>
     </div>

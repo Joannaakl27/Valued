@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :consumables, only: [:new, :create]
 
   get "dashboards", to: "dashboards#profile"
+  get "history", to: "dashboards#history"
 end
