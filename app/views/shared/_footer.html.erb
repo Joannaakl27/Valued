@@ -1,9 +1,13 @@
-<div class="navbar-bottom d-flex justify-content-center <%= yield(:footer_class)%>">
-  <a href="#" class="mr-1 ml-1" > <i class="fa fa-ellipsis-h"></i>More</a>
+<div class="navbar-bottom shadow-lg d-flex justify-content-center <%= yield(:footer_class)%>">
   <%# <a href="products" class="mr-1 ml-1" > <i class="fa fa-search"></i> Search</a> %>
-  <%= link_to products_path, class:"mr-1 ml-1" do %>
-    <i class="fa fa-search"></i>Search
+  <%= link_to history_path, class:"mr-5 ml-5 mt-3 mb-3" do %>
+    <i class="fa fa-xl fa-history"></i>
   <% end %>
-  <a href="#" class="mr-1 ml-1" > <i class="fa fa-dashboard"></i>Dashboard</a>
-  <a href="#" class="mr-1 ml-1" > <i class="fa fa-history"></i>History</a>
+  <%= link_to dashboards_path, class:"mr-5 ml-5 mt-3 mb-3" do %>
+    <i class="fa fa-xl fa-pie-chart"></i>
+  <% end %>
+  <%= link_to products_path, class:"mr-5 ml-5 mt-3 mb-3" do %>
+    <i class="fa fa-xl fa-search"></i>
+  <% end %>
+
 </div>

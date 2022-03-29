@@ -1,7 +1,6 @@
 <div class="container">
-  <section class="mx-auto my-5" style="max-width: 23rem;">
     <div class="col-12 pr-3 pl-3">
-      <h3 class= "text-black white mb-3">Search for a Product</h3>
+      <h3 class= "text-black white font-weight-bold mb-3">Search for a Product</h3>
       <div class="searchbar">
       <%= form_tag products_path, method: :get, class: "d-flex justify-content-between" do %>
           <%= text_field_tag :query,
@@ -19,7 +18,7 @@
       <% @products.each do |product| %>
         <div class="row">
           <div class="col-12 p-1">
-            <div class="card-index w-100">
+            <div class="card-index shadow-sm w-100">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center px-md-1">
                   <div>
@@ -30,32 +29,17 @@
                     <img src= <%= product["image_front_url"] %> width="60" height="60" class="product-img">
                   </div>
                 </div>
-                <div class="px-md-1">
+                <div class="">
                   <% if product["ecoscore_grade"].upcase == "A" %>
-                    <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
-                      <div class="progress-bar color-A" role="progressbar" style="width: <%= product["ecoscore_score"] %>%;" aria-valuenow="<%= product["ecoscore_score"] %>"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                    <span class="badge color-A">A</span>
                   <% elsif product["ecoscore_grade"].upcase == "B" %>
-                    <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
-                      <div class="progress-bar color-B" role="progressbar" style="width: <%= product["ecoscore_score"] %>%;" aria-valuenow="<%= product["ecoscore_score"] %>"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                    <span class="badge color-B">B</span>
                   <% elsif product["ecoscore_grade"].upcase == "C" %>
-                    <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
-                      <div class="progress-bar color-C" role="progressbar" style="width: <%= product["ecoscore_score"] %>%;" aria-valuenow="<%= product["ecoscore_score"] %>"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                    <span class="badge color-C">C</span>
                   <% elsif product["ecoscore_grade"].upcase == "D" %>
-                    <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
-                      <div class="progress-bar color-D" role="progressbar" style="width: <%= product["ecoscore_score"] %>%;" aria-valuenow="<%= product["ecoscore_score"] %>"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                    <span class="badge color-D">D</span>
                   <% elsif product["ecoscore_grade"].upcase == "E" %>
-                    <div class="progress mt-3 mb-1 rounded" style="height: 7px;">
-                      <div class="progress-bar color-E" role="progressbar" style="width: <%= product["ecoscore_score"] %>%;" aria-valuenow="<%= product["ecoscore_score"] %>"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                    <span class="badge color-E">E</span>
                   <%end%>
                 </div>
               </div>
@@ -64,6 +48,4 @@
         </div>
       <% end %>
     </div>
-
-  </section>
 </div>
