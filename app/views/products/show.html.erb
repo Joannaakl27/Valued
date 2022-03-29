@@ -1,16 +1,12 @@
-<div class="container d-flex align-items-center">
-  <section class="mx-auto my-5" style="max-width: 23rem;">
+<div class="container d-flex justify-content-center">
 
     <div class="card">
-      <div class="card-body">
+      <div class="card-body flex-column justify-content-center">
         <div class="d-flex justify-content-between ">
           <h3 class="card-title font-weight-bold"><%= @product["product_name"] %></h3>
-          <%# <button type="button" class="btn" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
-            <i class="fa fa-plus-circle fa-lg text-muted"></i>
-          </button> %>
-            <%= link_to new_consumable_path(product_id: @product["_id"]), class:"fa-solid fa-3x" do %>
-              <%= icon('fa-solid', 'square-plus') %>
-            <% end %>
+          <%= link_to new_consumable_path(product_id: @product["_id"]), class:"fa-solid fa-3x" do %>
+            <%= icon('fa-solid', 'square-plus') %>
+          <% end %>
         </div>
         <p class="card-text"><%= @product["brands_tags"].first %></p>
         <div class="d-flex justify-content-between">
@@ -30,20 +26,40 @@
             </span>
           </h6>
         </div>
-        <div class="progress" style="height: 5px;">
-          <div class="progress-bar bg-black" role="progressbar" style="width: <%= ((@product["ecoscore_data"]["agribalyse"]["co2_total"] / 4.50785714366) * 100).round()%>%;" aria-valuemin="0" aria-valuemax="100"></div>
+        <h5 class="card-title font-weight-bold mt-4"> Life Cycle Analysis</h5>
+        <div class="donut mt-4" style="--first: <%= (@product["ecoscore_data"]["agribalyse"]["co2_agriculture"]/ @product["ecoscore_data"]["agribalyse"]["co2_total"]).round(2) %>;
+                                  --second: <%= (@product["ecoscore_data"]["agribalyse"]["co2_processing"]/ @product["ecoscore_data"]["agribalyse"]["co2_total"]).round(2) %>;
+                                  --third: <%= (@product["ecoscore_data"]["agribalyse"]["co2_packaging"]/ @product["ecoscore_data"]["agribalyse"]["co2_total"]).round(2) %>;
+                                  --fourth: <%= (@product["ecoscore_data"]["agribalyse"]["co2_transportation"]/ @product["ecoscore_data"]["agribalyse"]["co2_total"]).round(2) %>;
+                                  --fifth: <%= (@product["ecoscore_data"]["agribalyse"]["co2_distribution"]/ @product["ecoscore_data"]["agribalyse"]["co2_total"]).round(2) %>; --donut-spacing: 2;">
+          <div class="donut__slice donut__slice__first"></div>
+          <div class="donut__slice donut__slice__second"></div>
+          <div class="donut__slice donut__slice__third"></div>
+          <div class="donut__slice donut__slice__fourth"></div>
+          <div class="donut__slice donut__slice__fifth"></div>
         </div>
-        <h6 class="card-title font-weight- mt-4"> Life Cycle Analysis</h6>
-        <div class="mt-2">
-        <%= pie_chart @data = {"Agriculture" => @product["ecoscore_data"]["agribalyse"]["co2_agriculture"],
-                "Processing" => @product["ecoscore_data"]["agribalyse"]["co2_processing"],
-                "Packaging" => @product["ecoscore_data"]["agribalyse"]["co2_packaging"],
-                "Transportation" => @product["ecoscore_data"]["agribalyse"]["co2_transportation"],
-                "Distribution" => @product["ecoscore_data"]["agribalyse"]["co2_distribution"],
-                "Consumption" => @product["ecoscore_data"]["agribalyse"]["co2_consumption"]
-              }, donut: true, colors: ['#71DD37', '#03C3EC',  '#8387F5', '#8592A3', '#FFAC02', '#FF3E1D'], cutoutPercentage: 80, legend: false %>
-        </div>
+        <ul class="list-inline">
+                    <li class="flexbox mb-1">
+                        <div> <span class="badge " style="background-color: #efb3e6"></span> <span>Agriculture</span> </div>
+                        <div><span><%= (@product["ecoscore_data"]["agribalyse"]["co2_agriculture"]/ @product["ecoscore_data"]["agribalyse"]["co2_total"]).round(2) * 100%> %</span></div>
+                    </li>
+                    <li class="flexbox mb-1">
+                        <div> <span class="badge badge-dot badge-lg mr-1" style="background-color: #ffdf7c"></span> <span>Pocessing</span> </div>
+                        <div><span><%= (@product["ecoscore_data"]["agribalyse"]["co2_processing"]/ @product["ecoscore_data"]["agribalyse"]["co2_total"]).round(2) * 100%> %</span></div>
+                    </li>
+                    <li class="flexbox">
+                        <div> <span class="badge badge-dot badge-lg mr-1" style="background-color: #b2def7"></span> <span>Packaging</span> </div>
+                        <div><span><%= (@product["ecoscore_data"]["agribalyse"]["co2_packaging"]/ @product["ecoscore_data"]["agribalyse"]["co2_total"]).round(2) * 100%> %</span></div>
+                    </li>
+                    <li class="flexbox mb-1">
+                        <div> <span class="badge badge-dot badge-lg mr-1" style="background-color: #ffdf7c"></span> <span>Transportation</span> </div>
+                        <div><span><%= (@product["ecoscore_data"]["agribalyse"]["co2_transportation"]/ @product["ecoscore_data"]["agribalyse"]["co2_total"]).round(2) * 100%> %</span></div>
+                    </li>
+                    <li class="flexbox mb-1">
+                        <div> <span class="badge badge-dot badge-lg mr-1" style="background-color: #ffdf7c"></span> <span>Distribution</span> </div>
+                        <div><span><%= (@product["ecoscore_data"]["agribalyse"]["co2_distribution"]/ @product["ecoscore_data"]["agribalyse"]["co2_total"]).round(2) * 100%> %</span></div>
+                    </li>
+                </ul>
       </div>
     </div>
-  </section>
 </div>

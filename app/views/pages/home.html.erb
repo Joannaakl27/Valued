@@ -1,4 +1,29 @@
 <%= content_for(:footer_class, "navbar-bottom-home") %>
-<div class="wallpaper" style="background-image: url('<%= asset_path('ecological_footprint_second.png') %>')">
-  <%= link_to "Start Now!", products_path, class: "btn btn-home" %>
+
+
+<div class="card ">
+  <%= image_tag ("homepage.png"), class: "card-img-top"%>
+  <div class="card-body d-flex flex-column justify-content-center">
+    <h1 class="card-title text-center font-weight-bold mb-4" style="color:#8387F5;">Eat what you like... Consciously!</h1>
+    <div class="card mt-2 mb-2" style="border-color:#b4b7f9;">
+      <div class="card-body d-flex justify-content-between align-items-center ">
+        Understand your food better
+        <i class="fa fa-xl fa-pie-chart" style="color:#8387F5;"></i>
+      </div>
+    </div>
+    <div class="card mt-2 mb-2" style="border-color:#b4b7f9;">
+      <div class="card-body d-flex justify-content-between align-items-center ">
+        Track your diet's carbon footprint
+        <i class="fa fa-xl fa-plus-square" style="color:#03C3EC;"></i>
+      </div>
+    </div>
+    <div class="card mt-2 mb-4"  style="border-color:#b4b7f9;">
+      <div class="card-body d-flex justify-content-between align-items-center ">
+        Reduce your environmental impact
+        <i class="fa fa-xl fa-arrow-circle-down" style="color:#71DD37;"></i>
+      </div>
+    </div>
+    <%= link_to "Start Now!", products_path, class: "btn btn-primary mt-2 mb-2", style: "background-color:#8387F5; color:#ffffff"  %>
+
+  </div>
 </div>

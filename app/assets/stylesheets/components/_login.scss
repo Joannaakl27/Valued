@@ -8,13 +8,14 @@ body {
     border-radius: 10px;
     background: #ffffff;
     color: #E9E9EA;
-    box-shadow: 0px 0px 10px 5px rgba(150, 150, 150, 0.5);
+
+
   }
 .card {
-  box-shadow: 0px 0px 10px 5px rgba(150, 150, 150, 0.5);
+
   background: #ffffff;
   color: #1d1d1d;
-  border-radius: 5px
+  border-radius: 10px
 }
 
 p {
@@ -81,7 +82,7 @@ p {
 .form-control {
     border: 1px solid #bbbbbb;
     border-radius: 3px;
-    background: #f1f1f1;
+    background: #ffffff;
     margin-bottom: 20px;
     letter-spacing: 1px
 }
@@ -90,7 +91,7 @@ p {
     border: 1px solid #bbbbbb;
     border-radius: 3px;
     box-shadow: none;
-  background-color: #dbdada;
+    background-color: #E7E7FF;
     letter-spacing: 1px
 }
 
@@ -107,21 +108,20 @@ p {
 }
 
 .btn-primary {
-    background-color: transparent;
+    background-color: #8387F5;
     border: 2px solid #8387F5;
-    color: #8387F5;
-    font-size: 14px
+    color: white;
+    font-size: 14px;
+    border-radius: 7px;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-    color: #8387F5;
-    background-color: #435A71;
+    color: white;
+    background-color: #8387F5;
     border: 2px solid #8387F5;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-small {
-    color: #F2CEFF
-}
 
 .far.fa-user {
     font-size: 13px
