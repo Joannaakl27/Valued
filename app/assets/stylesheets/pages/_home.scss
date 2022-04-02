@@ -11,6 +11,10 @@
   justify-content: center;
 }
 
+.card-title.font-weight-bold.mb-4 {
+  text-align: center;
+}
+
 .navbar-bottom-home {
   display: none;
   visibility: hidden;
@@ -35,44 +39,3 @@
   background-color: #435A71;
   border: 2px solid #6EB1F3;
 }
-
-//chager px en vh
-/*body {
-  background-color: #000000;
-  width: 414px;
-  height: 896px;
-}
-
-.home {
-  height: calc(70vh - 63px);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.title {
-  //       haut  droite bas   gauche
-  padding: 150px   0px  150px   0px;
-  color: #E9E9EA;
-  font-size: 100px;
-}
-
-.text {
-  color: #E9E9EA;
-  padding: 0px 0px  150px 0px;
-  font-size: 20px;
-}
-
-/*
-.navbar-lewagon {
-  display: none;
-  visibility: hidden;
-}
-
-.btn-blue {
-  font-size: 20px;
-  padding: 20px 20px;
-  background-color: aqua;
-  text-decoration: none;
-}*/

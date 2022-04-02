@@ -8,11 +8,13 @@ body {
     border-radius: 10px;
     background: #ffffff;
     color: #E9E9EA;
-
-
   }
-.card {
 
+.form-check {
+  display: flex;
+}
+
+.card {
   background: #ffffff;
   color: #1d1d1d;
   border-radius: 10px

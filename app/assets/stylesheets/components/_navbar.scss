@@ -3,7 +3,6 @@
   background-color: white;
   z-index:1;
   text-decoration-color: #566A7F;
-  overflow: hidden;
   position: fixed;
   top: 0;
   width: 100%;
@@ -21,4 +20,8 @@
   color: #a8a8a8;
   text-decoration: none;
   list-style: none;
+}
+
+.fa-user {
+  color: #8486ee;
 }

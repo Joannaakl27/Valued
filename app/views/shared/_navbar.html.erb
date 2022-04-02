@@ -3,25 +3,28 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png" %>
     <% end %>
-    <ul class="navbar-nav me-auto">
+
+    <div class="dropdown">
+
       <% if user_signed_in? %>
-        <li class="nav-item me-3 me-lg-0 dropdown">
+        <div class="nav-item me-3 me-lg-0 dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-lg fa-user"></i>
             <span class="badge bg-success badge-dot"></span>
           </a>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-end" aria-labelledby="navbarDropdown"  style="height: auto; overflow: initial;">
+            <%= link_to "Edit profil", "#", class: "dropdown-item" %>
+            <%= link_to "Settings", "#", class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
-        </li>
+        </div>
       <% else %>
-        <li class="nav-item">
+        <div class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+        </div>
       <% end %>
-    </ul>
+
+    </div>
   </div>
 </div>
