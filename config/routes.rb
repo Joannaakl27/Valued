@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    post :get_barcode, on: :collection
+  end
   resources :consumables, only: [:new, :create]
 
   get "dashboards", to: "dashboards#profile"

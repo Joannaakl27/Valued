@@ -1,6 +1,7 @@
 <div class="container">
     <div class="col-12 pr-3 pl-3">
-      <h3 class= "text-black white font-weight-bold mb-3">Search for a Product</h3>
+      <h2 class= "text-black white text-center font-weight-bold mb-3">Search for a Product</h2>
+      <div id='barcode-scanner'></div>
       <div class="searchbar">
       <%= form_tag products_path, method: :get, class: "d-flex justify-content-between" do %>
           <%= text_field_tag :query,
@@ -18,30 +19,31 @@
       <% @products.each do |product| %>
         <div class="row">
           <div class="col-12 p-1">
-            <div class="card-index shadow-sm w-100">
+            <div class="card-index shadow-sm w-100" style="border-left: 5px solid #8387F5;">
               <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center px-md-1">
+                <div class="d-flex justify-content-between align-items-center ">
                   <div>
-                    <p><%= product["product_name"] %></p>
+                    <p><%= truncate product["product_name"].squish, :length => 30, :separator => /\w/,
+                                      :omission => "..." %></p>
+                    <p class= "text-muted"><%= product["product_quantity"] %>.0 g</p>
+                    <% if product["ecoscore_grade"].upcase == "A" %>
+                      <span class="badge color-A">A</span>
+                    <% elsif product["ecoscore_grade"].upcase == "B" %>
+                      <span class="badge color-B">B</span>
+                    <% elsif product["ecoscore_grade"].upcase == "C" %>
+                      <span class="badge color-C">C</span>
+                    <% elsif product["ecoscore_grade"].upcase == "D" %>
+                      <span class="badge color-D">D</span>
+                    <% elsif product["ecoscore_grade"].upcase == "E" %>
+                      <span class="badge color-E">E</span>
+                    <%end%>
                     <%= link_to "", "products/#{product["_id"]}" , class:"stretched-link" %>
                   </div>
                   <div class="align-self-center">
                     <img src= <%= product["image_front_url"] %> width="60" height="60" class="product-img">
                   </div>
                 </div>
-                <div class="">
-                  <% if product["ecoscore_grade"].upcase == "A" %>
-                    <span class="badge color-A">A</span>
-                  <% elsif product["ecoscore_grade"].upcase == "B" %>
-                    <span class="badge color-B">B</span>
-                  <% elsif product["ecoscore_grade"].upcase == "C" %>
-                    <span class="badge color-C">C</span>
-                  <% elsif product["ecoscore_grade"].upcase == "D" %>
-                    <span class="badge color-D">D</span>
-                  <% elsif product["ecoscore_grade"].upcase == "E" %>
-                    <span class="badge color-E">E</span>
-                  <%end%>
-                </div>
+
               </div>
             </div>
           </div>
