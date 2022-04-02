@@ -13,4 +13,14 @@
 @import "components/footer";
 @import "components/login";
 @import "pages/show";
-@import "pages/form"
+@import "pages/form";
+@import "pages/profile";
+
+#barcode-scanner canvas.drawingBuffer, #barcode-scanner video.drawingBuffer {
+  display: none;
+}
+
+#barcode-scanner canvas, #barcode-scanner video {
+  width: 100%;
+  height: auto;
+}

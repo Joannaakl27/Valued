@@ -19,6 +19,7 @@ class ConsumablesController < ApplicationController
     @consumable.product_name = @product["product_name"]
     @consumable.product_image = @product["image_front_url"]
     @consumable.product_brand = @product["brands"]
+    @consumable.emission = (@product["ecoscore_data"]["agribalyse"]["co2_total"] * @consumable.serving_size * @consumable.number_of_servings ) / @product["product_quantity"].to_f
     @consumable.save
     redirect_to dashboards_path
   end

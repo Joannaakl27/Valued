@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-dark navbar-lewagon shadow-sm">
+<nav class="navbar navbar-expand-sm navbar-dark navbar-lewagon shadow-sm <%= yield(:navbar_class)%>">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png" %>
@@ -9,11 +9,10 @@
       <% if user_signed_in? %>
         <div class="nav-item me-3 me-lg-0 dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-lg fa-user"></i>
-            <span class="badge bg-success badge-dot"></span>
+            <i class="fa fa-lg fa-user "></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-menu-end" aria-labelledby="navbarDropdown"  style="height: auto; overflow: initial;">
-            <%= link_to "Edit profil", "#", class: "dropdown-item" %>
+            <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Settings", "#", class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
@@ -27,4 +26,4 @@
 
     </div>
   </div>
-</div>
+</nav>
