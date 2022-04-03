@@ -23,8 +23,8 @@ import "bootstrap";
 // import "chartkick/chart.js";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
 import Quagga from 'quagga';
+import '../components/quagga';
 import { initChart } from '../components/dashboardchart';
 import { initShowChart } from '../components/showchart';
 import { initHistoryChart } from '../components/historychart';
