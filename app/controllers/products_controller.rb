@@ -29,11 +29,14 @@ class ProductsController < ApplicationController
                       (@product["ecoscore_data"]["agribalyse"]["co2_consumption"] / @product["ecoscore_data"]["agribalyse"]["co2_total"]).round(2) * 100]
   end
 
+  def scan
+  end
+
   def get_barcode
-    response = URI.open("https://ch-en.openfoodfacts.org/api/v0/product/#{params[:upc]}.json")
+    response = URI.open("https://ch-en.openfoodfacts.org/api/v0/product/#{params[:barcode]}.json")
     json = JSON.parse(response.read)
     @product = json['product']
 
-    redirect_to @product
+    redirect_to product_path(@product["_id"])
   end
 end

@@ -17,6 +17,9 @@ const initShowChart = () => {
           'Distribution',
           'Consumption'
         ],
+        legend: {
+          display: false
+        },
         datasets: [{
           label: 'Life Cycle Emissions',
           data: JSON.parse(ctx.canvas.dataset.data),
@@ -34,6 +37,7 @@ const initShowChart = () => {
           hoverOffset: 4
         }]
       }
+
     });
   }
 }
