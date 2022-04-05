@@ -28,17 +28,6 @@ const initHistoryChart = () => {
           pointHoverBorderWidth: 5,
           pointBorderColor: 'transparent'
         }]
-      },
-      plugins: {
-        legend: {
-          position: 'top',
-          align: 'start',
-          labels: {
-            usePointStyle: true,
-            padding: 25,
-            boxWidth: 6,
-          }
-        }
       }
     });
   }

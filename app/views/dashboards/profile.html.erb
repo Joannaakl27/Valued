@@ -9,12 +9,16 @@
           <div class="col-12 p-1">
             <div class="card-dashboard shadow-sm w-90 mr-1 ml-1" style="background-color: #F3F3F7; height: 90px;">
               <div class="card-body" style="display: inline-block;">
-                <div class="d-flex justify-content-between" style="display: inline-block;">
+                <div class="d-flex justify-content-between">
                   <div class="d-flex flex-column justify-content-center">
                     <p><%= consumable.product_name %></p>
                     <p class= "text-muted"><%= consumable.serving_size * consumable.number_of_servings %> g</p>
                   </div>
+                  <%= link_to consumable_path(consumable),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" }  do %>
                     <i class="fa fa-2xl fa-minus-circle"></i>
+                  <% end %>
                 </div>
 
               </div>

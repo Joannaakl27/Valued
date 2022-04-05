@@ -24,9 +24,18 @@ class ConsumablesController < ApplicationController
     redirect_to dashboards_path
   end
 
+  def destroy
+    @consumable = Consumable.find(params[:id])
+    @consumable.destroy
+
+    # no need for app/views/restaurants/destroy.html.erb
+    redirect_to dashboards_path
+  end
+
   private
 
   def consumable_params
     params.require(:consumable).permit(:serving_size, :number_of_servings, :purchase_date, :product_barcode)
   end
+
 end
