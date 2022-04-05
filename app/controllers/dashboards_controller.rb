@@ -15,7 +15,7 @@ class DashboardsController < ApplicationController
     @consumables.each do |consumable|
       if @data_keys.include? consumable.purchase_date.to_date.strftime("%d/%m/%Y")
         i = @data_keys.index(consumable.purchase_date.to_date.strftime("%d/%m/%Y"))
-        @data_values[i]  += consumable.emission
+        @data_values[i] += consumable.emission
       else
         @data_keys << consumable.purchase_date.to_date.strftime("%d/%m/%Y")
         @data_values << consumable.emission

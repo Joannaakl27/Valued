@@ -16,10 +16,10 @@ const initChart = () => {
           data: JSON.parse(ctx.canvas.dataset.data),
           backgroundColor: [
             'rgb(131, 135, 245)',
-            'rgb(255, 255, 255)'
+            'rgb(243, 243, 247)'
           ],
           cutout: '80%',
-          radius: '90%',
+          radius: '80%',
           borderJoinStyle: 'round',
           hoverOffset: 4
         }]

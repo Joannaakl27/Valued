@@ -12,38 +12,59 @@
         <div class="d-flex justify-content-between">
           <h4 class = "display-3 degree"><%= @product["ecoscore_data"]["agribalyse"]["co2_total"].round(2)%></h4>
         </div>
-        <div class="d-flex justify-content-between mt-3 mb-3">
+        <div class="d-flex justify-content-between mt-1 mb-3">
           <h6>
-            <i class="fa fa-spinner fa-lg text-info pe-2" ></i>
+            <i class="fa fa-spinner fa-lg pe-2" style="color:#8387F5;"></i>
             <span data-toggle="tooltip" title="% of fair daily food emissions">
               <%= ((@product["ecoscore_data"]["agribalyse"]["co2_total"] / 4.50785714366) * 100).round()%> % FDFE
             </span>
           </h6>
           <h6>
-            <i class="fas fa-bolt fa-lg text-muted pe-2"></i>
+            <i class="fas fa-bolt fa-lg pe-2 text-info" ></i>
             <span data-toggle="tooltip" title="for Swiss household">
               <%= (@product["ecoscore_data"]["agribalyse"]["co2_total"] / 0.162).round() %> Days of power
             </span>
           </h6>
         </div>
-        <canvas id="showChart" width="300" height="300" data-data="<%= @lca_emissions %>"></canvas>
-        <ul class="doughnut-legend d-flex justify-content-around ps-0 mb-2 mt-4 pt-1">
-          <li class="ct-series-0 d-flex flex-column">
-            <h5 class="mb-0 fw-bold">Desktop</h5>
-            <span class="badge badge-dot my-2 cursor-pointer rounded-pill" style="background-color: rgb(102, 110, 232);width:35px; height:6px;"></span>
-            <div class="text-muted">80 %</div>
-          </li>
-          <li class="ct-series-1 d-flex flex-column">
-            <h5 class="mb-0 fw-bold">Tablet</h5>
-            <span class="badge badge-dot my-2 cursor-pointer rounded-pill" style="background-color: rgb(40, 208, 148);width:35px; height:6px;"></span>
-            <div class="text-muted">10 %</div>
-          </li>
-          <li class="ct-series-2 d-flex flex-column">
-            <h5 class="mb-0 fw-bold">Mobile</h5>
-            <span class="badge badge-dot my-2 cursor-pointer rounded-pill" style="background-color: rgb(253, 172, 52);width:35px; height:6px;"></span>
-            <div class="text-muted">10 %</div>
-          </li>
-        </ul>
+        <h5 class="font-weight-bold ">Life Cycle Emissions</h5>
+        <canvas id="showChart" height="200" width="300" data-data="<%= @lca_emissions %>"></canvas>
+        <div class="d-flex justify-content-between ">
+          <ul class="">
+            <li class="d-flex flex-column">
+              <h6 class="font-weight-bold">Agriculture</h6>
+              <span class="badge badge-pill mb-1" style="background-color: rgb(102, 110, 232);width:35px; height:6px;"> </span>
+              <div class="text-muted"><%= @lca_emissions[0].to_i %>%</div>
+            </li>
+            <li class="d-flex flex-column">
+              <h6 class="font-weight-bold">Processing</h6>
+              <span class="badge badge-pill mb-1" style="background-color: rgb(3, 195, 236);width:35px; height:6px;"> </span>
+              <div class="text-muted"><%= @lca_emissions[1].to_i %> %</div>
+            </li>
+            <li class="d-flex flex-column">
+              <h6 class="font-weight-bold">Packaging</h6>
+              <span class="badge badge-pill mb-1" style="background-color: rgb(113, 221, 55);width:35px; height:6px;"> </span>
+              <div class="text-muted"><%= @lca_emissions[2].to_i %> %</div>
+            </li>
+          </ul>
+          <ul class="">
+            <li class="d-flex flex-column">
+              <h6 class="font-weight-bold">Transportation</h6>
+              <span class="badge badge-pill mb-1" style="background-color: rgb(133, 146, 163);width:35px; height:6px;"> </span>
+              <div class="text-muted"><%= @lca_emissions[3].to_i %>%</div>
+            </li>
+            <li class="d-flex flex-column">
+              <h6 class="font-weight-bold">Distribution</h6>
+              <span class="badge badge-pill mb-1" style="background-color: rgb(231, 231, 255);width:35px; height:6px;"> </span>
+              <div class="text-muted"><%= @lca_emissions[4].to_i %> %</div>
+            </li>
+            <li class="d-flex flex-column">
+              <h6 class="font-weight-bold">Consumption</h6>
+              <span class="badge badge-pill mb-1" style="background-color: rgb(215,245,252);width:35px; height:6px;"> </span>
+              <div class="text-muted"><%= @lca_emissions[5].to_i %> %</div>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
 </div>

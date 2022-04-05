@@ -1,14 +1,24 @@
 <div class="container">
     <div class="col-12 pr-3 pl-3">
-      <h2 class= "text-black white font-weight-bold mb-3" style="color:#8387F5;">Search for a Product</h2>
+    <div class="d-flex justify-content-between mb-2">
+      <h3 class= "text-black white font-weight-bold mb-3" style="color:#8387F5;">Search for a Product</h3>
+      <%= link_to scan_products_url do %>
+        <button class="btn btn-primary" style="border: 2px solid #8387F5; background-color: transparent;" >
+          <i class="fas fa-lg fa-camera" style="color:#8387F5;"></i>
+        </button>
+      <% end %>
+    </div>
+
       <div class="searchbar">
       <%= form_tag products_path, method: :get, class: "d-flex justify-content-between" do %>
           <%= text_field_tag :query,
               params[:query],
               class: "form-control",
               placeholder: "Search for a product"%>
-        <div>
-          <%= submit_tag "Search", class: "btn btn-primary ml-2" %>
+        <div class="ml-2">
+          <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+            <i class="fas fa-lg fa-search"></i>
+          <% end %>
         </div>
       <% end %>
       </div>

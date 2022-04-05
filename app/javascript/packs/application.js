@@ -33,8 +33,9 @@ import { load_quagga } from "../components/quagga";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  load_quagga();
+
   initChart();
   initShowChart();
   initHistoryChart();
+  load_quagga();
 });

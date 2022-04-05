@@ -1,3 +1,28 @@
-<div class="container p-3">
-  <canvas id="myChart" width="400" height="400" data-data= "<%= @percent_daily_emissions %>" ></canvas>
+<div class="container">
+  <div class="card" style="width: 375px; height: 700px">
+    <h2 class= "text font-weight-bold " style="color:#8387F5;">Daily Footprint</h2>
+    <canvas id="myChart" width="400" height="400" data-data= "<%= @percent_daily_emissions %>" ></canvas>
+    <h6 class="font-weight-bold ml-4">History</h6>
+    <div class="card-body rounded-bottom text-dark">
+      <% @consumables.each do |consumable| %>
+        <div class="row">
+          <div class="col-12 p-1">
+            <div class="card-dashboard shadow-sm w-90 mr-1 ml-1" style="background-color: #F3F3F7; height: 90px;">
+              <div class="card-body" style="display: inline-block;">
+                <div class="d-flex justify-content-between" style="display: inline-block;">
+                  <div class="d-flex flex-column justify-content-center">
+                    <p><%= consumable.product_name %></p>
+                    <p class= "text-muted"><%= consumable.serving_size * consumable.number_of_servings %> g</p>
+                  </div>
+                    <i class="fa fa-2xl fa-minus-circle"></i>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
 </div>
