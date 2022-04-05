@@ -11,12 +11,34 @@ const initHistoryChart = () => {
         labels: JSON.parse(ctx.canvas.dataset.labels),
 
         datasets: [{
-          label: 'Emissions History',
+          label: 'kg CO2 equivalent emissions',
           data: JSON.parse(ctx.canvas.dataset.data),
           backgroundColor: [
             'rgb(131, 135, 245)'
           ],
+          borderColor: [
+            'rgb(131, 135, 245)'
+          ],
+          tension: 0.5,
+          usePointStyle: true,
+          pointStyle: 'circle',
+          fill: false,
+          pointRadius: 1,
+          pointHoverRadius: 5,
+          pointHoverBorderWidth: 5,
+          pointBorderColor: 'transparent'
         }]
+      },
+      plugins: {
+        legend: {
+          position: 'top',
+          align: 'start',
+          labels: {
+            usePointStyle: true,
+            padding: 25,
+            boxWidth: 6,
+          }
+        }
       }
     });
   }

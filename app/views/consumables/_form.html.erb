@@ -1,11 +1,11 @@
 <div class="container">
   <div class="card" style="width: 375px; height: 700px">
-    <h2 class="text">Add Food</h2>
-    <div class="presentation">
-      <%= image_tag @product["image_front_url"], crop: :fill, class: 'image'%>
+    <h2 class= "text font-weight-bold mb-5" style="color:#8387F5;">Add Food</h2>
+    <div class="presentation mb-5">
+      <%= image_tag @product["image_front_url"], crop: :fill, class: 'product-img', style:"width=120px; height:120px;"%>
       <div class="description">
         <p><%= @product["product_name"] %></p>
-        <p><%= @product["brands"] %></p>
+         <p class= "text-muted"><%= @product["product_quantity"] %>.0 g</p>
       </div>
     </div>
     <div class="add-zone">
@@ -15,7 +15,7 @@
         <%= f.input :serving_size, as: :float, html5: true %>
         <%= f.input :product_barcode, input_html: {value: @product["_id"]}, as: :hidden %>
         <div class="text-center">
-          <%= f.submit 'Submit', class: 'btn btn-flat mt-2 text-center' %>
+          <%= f.submit 'Submit', class: 'btn btn-primary btn-lg mt-2 text-center' %>
         </div>
       <% end %>
     </div>
