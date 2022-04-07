@@ -12,16 +12,16 @@ Consumable.destroy_all
 User.destroy_all
 
 User.create!(
-  email: "aaribaud@hotmail.com",
+  email: "joanna95@gmail.com",
   password: "123456",
-  username: "Anthony"
+  username: "Joannaaa"
 )
 
 Consumable.create!(
   serving_size: 100,
   number_of_servings: 1,
   purchase_date: Date.strptime('03-04-2022', '%d-%m-%Y'),
-  user: User.first,
+  user: 1,
   product_barcode: "12345678",
   product_name: "food",
   product_image: "",
@@ -33,7 +33,7 @@ Consumable.create!(
   serving_size: 100,
   number_of_servings: 1,
   purchase_date: Date.strptime('04-04-2022', '%d-%m-%Y'),
-  user: User.first,
+  user: 1,
   product_barcode: "12345678",
   product_name: "food",
   product_image: "",
@@ -45,7 +45,7 @@ Consumable.create!(
   serving_size: 100,
   number_of_servings: 1,
   purchase_date: Date.strptime('05-04-2022', '%d-%m-%Y'),
-  user: User.first,
+  user: 1,
   product_barcode: "12345678",
   product_name: "food",
   product_image: "",
@@ -57,7 +57,7 @@ Consumable.create!(
   serving_size: 100,
   number_of_servings: 1,
   purchase_date: Date.strptime('06-04-2022', '%d-%m-%Y'),
-  user: User.first,
+  user: 1,
   product_barcode: "12345678",
   product_name: "food",
   product_image: "",
@@ -69,7 +69,7 @@ Consumable.create!(
   serving_size: 100,
   number_of_servings: 1,
   purchase_date: Date.strptime('07-04-2022', '%d-%m-%Y'),
-  user: User.first,
+  user: 1,
   product_barcode: "12345678",
   product_name: "food",
   product_image: "",
