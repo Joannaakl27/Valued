@@ -16,13 +16,13 @@
           <h6>
             <i class="fa fa-spinner fa-lg pe-2" style="color:#8387F5;"></i>
             <span data-toggle="tooltip" title="% of fair daily food emissions">
-              <%= ((@product["ecoscore_data"]["agribalyse"]["co2_total"] / 4.50785714366) * 100).round()%> % FDFE
+              <%= ((@product["ecoscore_data"]["agribalyse"]["co2_total"] / 4.50785714366) * 100).round()%> % Daily Target
             </span>
           </h6>
           <h6>
             <i class="fas fa-bolt fa-lg pe-2 text-info" ></i>
             <span data-toggle="tooltip" title="for Swiss household">
-              <%= (@product["ecoscore_data"]["agribalyse"]["co2_total"] / 0.162).round() %> Days of power
+              <%= (@product["ecoscore_data"]["agribalyse"]["co2_total"] / 0.162).round() %> Days of Power
             </span>
           </h6>
         </div>

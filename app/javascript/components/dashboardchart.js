@@ -9,7 +9,7 @@ const initChart = () => {
       type: 'doughnut',
       data: {
         labels: [
-          '% FDFE'
+          '% Daily Target'
         ],
         datasets: [{
           label: 'My Footprint',
